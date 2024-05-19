@@ -1,20 +1,16 @@
 export const RequiredEnvVars = [
-  'DB_HOST',
-  'DB_USERNAME',
-  'DB_PASSWORD',
-  'DB_NAME',
   'SERVER_PORT',
+  'SERVER_HOST',
+  'DATABASE_URL',
+  'EXCHANGE_API_URL',
 ];
 
 interface Configuration {
   server: {
     port: number;
   };
-  databaseConfig: {
-    dbHost: string;
-    dbName: string;
-    username: string;
-    password: string;
+  database: {
+    url: string;
   };
 }
 
@@ -27,11 +23,11 @@ export const configuration = (): Configuration => {
         parseInt(process.env.SERVER_PORT as string, 10) || DEFAULT_SERVER_PORT,
       host: process.env.SERVER_HOST,
     },
-    databaseConfig: {
-      dbHost: process.env.DB_HOST as string,
-      dbName: process.env.DB_NAME as string,
-      username: process.env.DB_USERNAME as string,
-      password: process.env.DB_PASSWORD as string,
+    database: {
+      url: process.env.DATABASE_URL,
+    },
+    exchangeApi: {
+      url: process.env.EXCHANGE_API_URL,
     },
   };
 
