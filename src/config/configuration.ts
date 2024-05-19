@@ -3,14 +3,28 @@ export const RequiredEnvVars = [
   'SERVER_HOST',
   'DATABASE_URL',
   'EXCHANGE_API_URL',
+  'MAIL_HOST',
+  'MAIL_PORT',
+  'MAIL_USER',
+  'MAIL_PASSWORD',
 ];
 
 interface Configuration {
   server: {
     port: number;
+    host: string;
   };
   database: {
     url: string;
+  };
+  exchangeApi: {
+    url: string;
+  };
+  mailer: {
+    host: string;
+    port: string;
+    user: string;
+    password: string;
   };
 }
 
@@ -28,6 +42,12 @@ export const configuration = (): Configuration => {
     },
     exchangeApi: {
       url: process.env.EXCHANGE_API_URL,
+    },
+    mailer: {
+      host: process.env.MAIL_HOST,
+      port: process.env.MAIL_PORT,
+      user: process.env.MAIL_USER,
+      password: process.env.MAIL_PASSWORD,
     },
   };
 

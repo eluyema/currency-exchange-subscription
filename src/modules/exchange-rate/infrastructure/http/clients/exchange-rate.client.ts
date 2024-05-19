@@ -1,4 +1,3 @@
-// src/infrastructure/http/clients/exchange-rate.client.ts
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';

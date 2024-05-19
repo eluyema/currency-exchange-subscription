@@ -8,4 +8,10 @@ export const TYPES = {
   clients: {
     ExchangeRateClient: Symbol('ExchangeRateClient'),
   },
+  notification: {
+    ExchangeRateNotificationService: Symbol('ExchangeRateNotificationService'),
+  },
+  cron: {
+    ExchangeRateCronService: Symbol('ExchangeRateCronService'),
+  },
 };
