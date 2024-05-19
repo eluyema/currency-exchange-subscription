@@ -1,6 +1,6 @@
 # Base image
 FROM node:20.11.1-alpine
-
+RUN ls -lah
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -17,5 +17,6 @@ COPY . .
 # Creates a "dist" folder with the production build
 RUN npm run build
 
+
 # Start the server using the production build
-CMD [ "npm", "run", "start:prod" ]
+CMD ["/bin/sh","node-server-init.sh" ]

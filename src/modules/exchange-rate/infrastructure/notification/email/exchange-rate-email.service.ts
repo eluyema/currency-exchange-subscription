@@ -27,10 +27,10 @@ export class ExchangeRateEmailService
   ): Promise<void> {
     const subject = 'Daily Exchange Rate';
     const template = AvailableTemplatesEnum.EXCHANGE_RATE;
-    console.log(exchangeRate, exchangeRate.date);
+
     const context = {
       rate: exchangeRate.rate,
-      date: exchangeRate.date.toLocaleString('en-US'),
+      date: exchangeRate.date.toISOString(),
     };
 
     const recipients = await this.subscriptionService.getSubscribers();
