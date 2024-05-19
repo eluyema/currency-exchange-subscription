@@ -4,6 +4,42 @@
   <title>Daily Exchange Rate</title>
 </head>
 <body>
-  <p>The exchange rate from USD to UAH is <strong>{{rate}}</strong> as of <strong>{{date}}</strong>.</p>
+  <div class="outer-mail-body">
+    <div class="inner-mail-body">
+      <div class="content-block">
+        <p class="mail-text">The exchange rate from USD to UAH is <strong class="exchange-rate-price">{{rate}}</strong> as of <strong>{{date}}</strong>.</p>
+      </div>
+    </div>
+    </div>
+  <style>
+    .outer-mail-body {
+      width: 600px !important;
+      display: flex;
+      justify-content: center;
+      background-color: gainsboro;
+    }
+
+    .mail-title {
+      width: 400px !important;
+      display: flex;
+      background-color: #fff;
+      align-content: center;
+    }
+
+    .content-block {
+      background-color: #74a9ff;
+      padding: 24px;
+    }
+
+    .mail-text {
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .exchange-rate-price {
+      font-size: 28px;
+      color: #fdff7b;
+    }
+  </style>
 </body>
 </html>
