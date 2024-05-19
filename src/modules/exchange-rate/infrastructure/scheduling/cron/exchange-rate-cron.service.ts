@@ -14,7 +14,7 @@ export class ExchangeRateCronServiceImpl implements ExchangeRateCronService {
     private readonly exchangeRateNotificationService: ExchangeRateNotificationService,
   ) {}
 
-  @Cron(CronExpression.EVERY_DAY_AT_10AM)
+  @Cron(CronExpression.EVERY_30_MINUTES)
   async handleCron() {
     const exchangeRate = await this.fetchExchangeRateApp.execute();
     await this.exchangeRateNotificationService.sendExchangeRateNotification(
