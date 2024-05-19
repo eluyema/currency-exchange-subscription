@@ -4,5 +4,6 @@ export const TYPES = {
   },
   services: {
     EmailService: Symbol('EmailService'),
+    TemplateService: Symbol('TemplateService'),
   },
 };
