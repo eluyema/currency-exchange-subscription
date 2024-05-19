@@ -22,7 +22,7 @@ const templateService = {
 
 @Module({
   imports: [ConfigModule],
-  providers: [sendEmailApp, emailService],
+  providers: [sendEmailApp, templateService, emailService],
   exports: [emailService, templateService],
 })
 export class MailerModule {}

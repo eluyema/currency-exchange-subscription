@@ -18,11 +18,11 @@ export class FetchExchangeRateApplicationImpl
 
   async execute(): Promise<ExchangeRate> {
     const data = await this.exchangeRateClient.fetchExchangeRates();
-
+    console.log(data);
     return this.exchangeRateService.createExchangeRate(
       data.base,
       data.rates.UAH,
-      new Date(data.timestamp),
+      new Date(),
     );
   }
 }
