@@ -24,5 +24,6 @@ export class SubscriptionController {
       response.status(409).send();
       return;
     }
+    return response.status(200).send();
   }
 }
